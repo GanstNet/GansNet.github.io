@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>数据中心碳排放计算器</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="favicon.ico">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="announcement-panel">
+				<h1 id="announcement-header">数据中心碳排放计算器</h1>
+				<h3 id="announcement-subheader">由继远软件制作 JiYuan Software</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div id="form">
+					<form>
+						<h3 id="home-energy-label"><i class="fa fa-home" aria-hidden="true"></i>数据中心</h3>	
+						<div class="form-group">
+							<label for="electricinput">外购电力</label>
+							<div class="input-group">
+								<div class="input-group-addon">MWh</div>
+								<input class="form-control" id="electricinput" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0。 如果留空，将默认为 0</span>
+						</div>
+						<div class="form-group">
+							<label for="heatinput">外购热力</label>
+							<div class="input-group">
+								<div class="input-group-addon">GJ</div>
+								<input class="form-control" id="heatinput" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0。如果留空，将默认为 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="gas">天然气消耗量</label>
+							<div class="input-group">
+								<div class="input-group-addon">ton</div>
+								<input class="form-control" id="gas" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0。如果留空，将默认为 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="oil">柴油净消耗量</label>
+							<p><i>主要包括场地内可移动的机械设备和公用汽车等消耗的柴油</i></p>
+							<div class="input-group">
+								<div class="input-group-addon">ton</div>
+								<input class="form-control" id="oil" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0.如果留空，将默认为 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="electricoutput">输出电力</label>
+							<div class="input-group">
+								<div class="input-group-addon">MWh</div>
+								<input class="form-control" id="electricoutput" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0。如果留空，将默认为 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="heatoutput">输出热力</label>
+							<div class="input-group">
+								<div class="input-group-addon">GJ</div>
+								<input class="form-control" id="heatoutput" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">如果不适用，请输入 0。如果留空，将默认为 0.</span>
+						</div>
+						<button id="calculate-btn" type="button" class="btn btn-success btn-lg btn-block">计算</button>
+					</form>
+				</div>
+				<div id="results" class="text-center">
+					<h1 id="score"></h1>
+					<div id="donutchart" class="center" style="width: 800px; height: 500px;"></div>
+			</div>	
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			</div>	
+		</div>
+	</div>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+</script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="script.js" type="text/javascript"></script>
+</body>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+</script>
+</html>
+
